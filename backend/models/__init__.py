@@ -1,9 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from backend.models.transaction import Base as TransactionBase
-from backend.models.payment_gateway import Base as PaymentGatewayBase
+from backend.models.transaction import Base
 
-# Epic Title: Integrate multiple payment gateways
+# Epic Title: Implement secure checkout process
 
 DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
@@ -12,5 +11,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_factory = scoped_session(SessionLocal)
 
 def init_db():
-    TransactionBase.metadata.create_all(bind=engine)
-    PaymentGatewayBase.metadata.create_all(bind=engine)
+    import backend.models.transaction
+    Base.metadata.create_all(bind=engine)
