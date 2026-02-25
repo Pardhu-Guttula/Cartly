@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, String, Date, Float, Index
+from sqlalchemy import Column, Integer, String, Date, Float
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from datetime import datetime
 
-# Epic Title: Store Promotion and Discount Data in PostgreSQL
+# Epic Title: Integrate Promotion System with Payment System
 
 Base = declarative_base()
 
@@ -15,8 +15,5 @@ class Promotion(Base):
     discount_amount = Column(Float, nullable=False)
     expiration_date = Column(Date, nullable=False)
     
-    discounts = relationship("Discount", back_populates="promotion")
-    
-    __table_args__ = (
-        Index('ix_code', 'code'),
-    )
+    def is_valid(self) -> bool:
+        return datetime.utcnow().date() <= self.expiration_date
