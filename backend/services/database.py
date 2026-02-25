@@ -19,6 +19,4 @@ def init_db():
     import backend.models.category
     import backend.models.cart
     import backend.models.cart_item
-    import backend.models.wishlist
-    import backend.models.wishlist_item
     Base.metadata.create_all(bind=engine)
