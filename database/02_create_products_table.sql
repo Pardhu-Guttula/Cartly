@@ -1,4 +1,4 @@
--- Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
+-- Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
