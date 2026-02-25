@@ -1,7 +1,6 @@
-Based on the given folder structure and user stories about deleting user addresses, the implementation will focus on:
+Based on the provided folder structure and user stories about retrieving user addresses, the implementation will focus on:
 
-1. Ensuring that the user owns the address they want to delete.
-2. Removing the address from the database if it exists.
-3. Handling cases where the address does not exist.
+1. Ensuring that only addresses associated with the logged-in user are retrieved.
+2. Displaying addresses in a user-friendly format or displaying a message when no saved addresses exist.
 
-Below is the implementation plan for deleting user addresses:
+Below is the implementation plan for retrieving user addresses:
