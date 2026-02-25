@@ -1,16 +1,32 @@
 from pydantic import BaseModel
 
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Integrate multiple payment gateways
 
-class CheckoutRequest(BaseModel):
-    amount: float
-    promo_code: str
+class PaymentDetails(BaseModel):
+    card_number: str
+    expiry_date: str
+    cvv: str
 
-class CheckoutResponse(BaseModel):
-    transaction_id: int
+class CheckoutCreate(BaseModel):
+    order_id: int
     amount: float
-    discount: float
-    final_amount: float
+    payment_gateway: str
+    payment_details: PaymentDetails
+
+class TransactionOut(BaseModel):
+    id: int
+    order_id: int
+    amount: float
+    status: str
+    payment_gateway: str
+    created_at: str
+
+    class Config:
+        orm_mode = True
+
+class PaymentGatewayOut(BaseModel):
+    id: int
+    name: str
     status: str
 
     class Config:
