@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from backend.routes import address
 from backend.services.database import init_db
 
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 app = FastAPI()
 
