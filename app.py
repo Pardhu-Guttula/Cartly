@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import product
+from backend.routes import wishlist
 from backend.services.database import init_db
 
-# Epic Title: Integrate dashboard with PostgreSQL
+# Epic Title: Implement Shopping Cart and Wishlist Functionality
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the product routes
-app.include_router(product.router, prefix="/api/products", tags=["Products"])
+# Include the wishlist routes
+app.include_router(wishlist.router, prefix="/api/wishlist", tags=["Wishlist"])
