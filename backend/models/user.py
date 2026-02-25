@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-# Epic Title: Edit User Address
+# Epic Title: Delete User Address
 
 Base = declarative_base()
 
