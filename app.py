@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import promotion
+from backend.routes import address
 from backend.services.database import init_db
 
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Save User Address
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the routes
-app.include_router(promotion.router, prefix="/api", tags=["Promotion"])
+# Include the address routes
+app.include_router(address.router, prefix="/api", tags=["Address"])
