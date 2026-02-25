@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Sequence
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: User Password Security
+# Epic Title: User Login Functionality
 
 Base = declarative_base()
 
