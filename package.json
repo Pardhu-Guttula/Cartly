@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -12,4 +12,16 @@
   }
 }
 
-This setup ensures that promotions are correctly reflected in orders, and handles inconsistencies, maintaining data integrity.
+### How to Start the Application
+1. **Set up the database**:
+   - Create the database and run the SQL scripts to create the tables:
+          mysql -u username -p mydatabase < database/01_create_users_table.sql
+     mysql -u username -p mydatabase < database/02_create_products_table.sql
+     mysql -u username -p mydatabase < database/03_create_orders_table.sql
+     
+2. **Start the backend server**:
+   - Navigate to the `backend` directory.
+   - Run `npm install` to install dependencies.
+   - Start the backend server with `npm start`.
+
+This implementation ensures a modular architecture for easy integration, with separate concerns for users, products, and orders, allowing for individual modules to be developed and deployed independently while supporting seamless connectivity and communication between modules.
