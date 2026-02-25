@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import checkout
+from backend.routes import promotion
 from backend.services.database import init_db
 
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Apply Promotions During Checkout
 
 app = FastAPI()
 
@@ -12,4 +12,4 @@ def on_startup():
     init_db()
 
 # Include the routes
-app.include_router(checkout.router, prefix="/api", tags=["Checkout"])
+app.include_router(promotion.router, prefix="/api", tags=["Promotion"])
