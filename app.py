@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import checkout
+from backend.routes import product
 from backend.services.database import init_db
 
-# Epic Title: Implement secure checkout process
+# Epic Title: Integrate dashboard with PostgreSQL
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the checkout routes
-app.include_router(checkout.router, prefix="/api", tags=["Checkout"])
+# Include the product routes
+app.include_router(product.router, prefix="/api/products", tags=["Products"])
