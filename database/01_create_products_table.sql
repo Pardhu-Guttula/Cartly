@@ -1,4 +1,4 @@
--- Epic Title: Integrate dashboard with PostgreSQL
+-- Epic Title: Implement product management functionality
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
