@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from backend.routes import checkout
 from backend.services.database import init_db
 
-# Epic Title: Integrate multiple payment gateways
+# Epic Title: Implement secure checkout process
 
 app = FastAPI()
 
