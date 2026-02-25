@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import promotion, discount
+from backend.routes import checkout
 from backend.services.database import init_db
 
-# Epic Title: Store Promotion and Discount Data in PostgreSQL
+# Epic Title: Integrate Promotion System with Payment System
 
 app = FastAPI()
 
@@ -12,5 +12,4 @@ def on_startup():
     init_db()
 
 # Include the routes
-app.include_router(promotion.router, prefix="/api", tags=["Promotion"])
-app.include_router(discount.router, prefix="/api", tags=["Discount"])
+app.include_router(checkout.router, prefix="/api", tags=["Checkout"])
