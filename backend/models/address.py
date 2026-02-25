@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from cryptography.fernet import Fernet
 import os
 
-# Epic Title: Save User Address
+# Epic Title: Edit User Address
 
 Base = declarative_base()
 key = os.environ.get('ENCRYPTION_KEY', Fernet.generate_key())
