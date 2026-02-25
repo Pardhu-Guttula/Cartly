@@ -1,11 +1,6 @@
 fastapi==0.70.0
 uvicorn==0.15.0
 SQLAlchemy==1.4.32
-psycopg2-binary==2.9.1
+mysql-connector-python==8.0.27
 
-### How to Start the Application
-1. Navigate to the `backend` directory.
-2. Run `pip install -r requirements.txt` to install dependencies.
-3. Start the development server with `uvicorn backend.app:app --reload`.
-
-This implementation ensures the PostgreSQL database stores performance metrics and user behavior data while maintaining data integrity and reliability.
+Here is the frontend implementation using Next.js:
