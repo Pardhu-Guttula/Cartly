@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "sequelize": "^6.6.5",
+    "mysql2": "^2.2.5"
+  }
+}
+
+This setup ensures that promotions are correctly reflected in orders, and handles inconsistencies, maintaining data integrity.
