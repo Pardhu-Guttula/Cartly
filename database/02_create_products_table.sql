@@ -1,10 +1,7 @@
--- Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
+-- Epic Title: Ensure Modular Architecture for Easy Integration
 
 CREATE TABLE products (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description VARCHAR(255),
-    price NUMERIC NOT NULL CHECK (price > 0),
-    category_id INTEGER NOT NULL REFERENCES categories(id),
-    inventory INTEGER NOT NULL CHECK (inventory >= 0)
+    name VARCHAR(255) NOT NULL,
+    price FLOAT NOT NULL
 );
