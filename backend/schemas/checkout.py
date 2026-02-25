@@ -1,23 +1,17 @@
 from pydantic import BaseModel
 
-# Epic Title: Implement secure checkout process
+# Epic Title: Integrate Promotion System with Payment System
 
-class PaymentDetails(BaseModel):
-    card_number: str
-    expiry_date: str
-    cvv: str
-
-class CheckoutCreate(BaseModel):
-    order_id: int
+class CheckoutRequest(BaseModel):
     amount: float
-    payment_details: PaymentDetails
+    promo_code: str
 
-class TransactionOut(BaseModel):
-    id: int
-    order_id: int
+class CheckoutResponse(BaseModel):
+    transaction_id: int
     amount: float
+    discount: float
+    final_amount: float
     status: str
-    created_at: str
 
     class Config:
         orm_mode = True
