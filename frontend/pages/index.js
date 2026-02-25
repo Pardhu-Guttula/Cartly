@@ -1,25 +1,19 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
+import Link from 'next/link';
 
-// Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
+// Epic Title: Develop Visualization Front-end with Next.js
 
 const Home = () => {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/api/data')
-      .then(response => setData(response.data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
-      <h1>Data from Backend</h1>
-      {data ? (
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div style={{ padding: "20px", maxWidth: "600px", margin: "auto" }}>
+      <h1>Data Visualization Tool</h1>
+      <nav>
+        <ul>
+          <li><Link href="/bar-chart"><a>Bar Chart</a></Link></li>
+          <li><Link href="/line-chart"><a>Line Chart</a></Link></li>
+          <li><Link href="/pie-chart"><a>Pie Chart</a></Link></li>
+        </ul>
+      </nav>
     </div>
   );
 };
