@@ -1,7 +1,7 @@
--- Epic Title: Apply Promotions During Checkout
+-- Epic Title: Integrate Promotion System with Order Management
 
 CREATE TABLE promotions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     code VARCHAR(20) NOT NULL UNIQUE,
     description VARCHAR(255) NOT NULL,
     discount_amount FLOAT NOT NULL,
