@@ -1,9 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from backend.models.user import Base  # Epic Title: User Signup Functionality
+from backend.models.product import Base
+from backend.models.category import Base
 
-engine = create_engine('mysql://username:password@localhost/mydatabase')
+# Epic Title: Design PostgreSQL Data Models for Categories
+
+engine = create_engine('postgresql://username:password@localhost/mydatabase')
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def init_db():
+    import backend.models.product
+    import backend.models.category
     Base.metadata.create_all(bind=engine)
