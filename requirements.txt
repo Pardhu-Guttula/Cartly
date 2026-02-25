@@ -1,6 +1,4 @@
 fastapi==0.70.0
 uvicorn==0.15.0
 SQLAlchemy==1.4.32
-mysql-connector-python==8.0.27
-
-Here is the frontend implementation using Next.js:
+psycopg2-binary==2.9.1
