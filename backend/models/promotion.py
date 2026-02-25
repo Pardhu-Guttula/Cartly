@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, String, Date, Float
+from sqlalchemy import Column, Integer, String, Date, Float, Index
 from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+from sqlalchemy.orm import relationship
 
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Develop Frontend Interface for Promotions
 
 Base = declarative_base()
 
@@ -15,5 +15,8 @@ class Promotion(Base):
     discount_amount = Column(Float, nullable=False)
     expiration_date = Column(Date, nullable=False)
     
-    def is_valid(self) -> bool:
-        return datetime.utcnow().date() <= self.expiration_date
+    discounts = relationship("Discount", back_populates="promotion")
+    
+    __table_args__ = (
+        Index('ix_code', 'code'),
+    )
