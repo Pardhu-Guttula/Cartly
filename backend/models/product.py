@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Design PostgreSQL Data Models for Products
+# Epic Title: Design PostgreSQL Data Models for Categories
 
 Base = declarative_base()
 
