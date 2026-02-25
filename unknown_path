@@ -1,5 +1,5 @@
 # Epic Title: Implement Shopping Cart and Wishlist Functionality
 
-To implement the wishlist functionality as described in the user stories, we will create the necessary models, routes, and schemas in the backend using Flask and MySQL.
+Given that the request is to implement the shopping cart functionality using Flask and MySQL on the backend, we need to create models for the cart and the cart items, routes to handle the various cart operations, and schemas to serialize and deserialize the data.
 
-The setup will include three additional folders based on the provided folder structure: `models`, `routes`, and `schemas`.
+We will create three folders where the necessary files will reside: `models`, `routes`, and `schemas`.
