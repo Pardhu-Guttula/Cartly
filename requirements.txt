@@ -3,20 +3,9 @@ uvicorn==0.15.0
 SQLAlchemy==1.4.32
 psycopg2-binary==2.9.1
 
-### How to Start the Applications
+### How to Start the Application
+1. Navigate to the `backend` directory.
+2. Run `pip install -r requirements.txt` to install dependencies.
+3. Start the development server with `uvicorn backend.app:app --reload`.
 
-1. **Set up the PostgreSQL Database**:
-   - Create the database and run the SQL script to create tables:
-          psql -U username -d mydatabase -a -f database/01_create_data_table.sql
-     
-2. **Start the Backend Server**:
-   - Navigate to the `backend` directory.
-   - Run `npm install` to install dependencies.
-   - Start the backend server with `npm start`.
-
-3. **Start the Frontend Server**:
-   - Navigate to the `frontend` directory.
-   - Run `npm install` to install dependencies.
-   - Start the frontend server with `npm run dev`.
-
-This setup ensures you have a scalable infrastructure using Next.js for the frontend, Node.js for the backend, and PostgreSQL for handling your database needs. The infrastructure is designed to support performance optimization, scalability, and integration capability.
+This implementation ensures the PostgreSQL database stores performance metrics and user behavior data while maintaining data integrity and reliability.
