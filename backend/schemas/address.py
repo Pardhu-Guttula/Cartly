@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 class AddressOut(BaseModel):
     id: int
