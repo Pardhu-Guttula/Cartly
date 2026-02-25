@@ -1,13 +1,14 @@
-from sqlalchemy import Column, Integer, String, Sequence
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
-# Epic Title: User Signup Functionality
+# Epic Title: Edit User Address
 
 Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'users'
     
-    id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
-    email = Column(String(50), unique=True, nullable=False)
-    password = Column(String(255), nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(50), nullable=False, unique=True)
+    addresses = relationship("Address", back_populates="user")
