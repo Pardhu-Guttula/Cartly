@@ -8,9 +8,13 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "sequelize": "^6.6.5",
-    "pg": "^8.7.1",
-    "pg-hstore": "^2.3.4"
+    "mysql2": "^2.2.5"
   }
 }
 
-### FastAPI (optional for managing environment variables)
+### How to Start the Application
+1. Navigate to the `backend` directory.
+2. Run `npm install` to install dependencies.
+3. Start the server with `npm run start`.
+
+This setup ensures efficient processing of large datasets, supports batch and real-time processing modes, and handles high-volume data efficiently using Node.js.
