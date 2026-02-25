@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Save User Address
+# Epic Title: Edit User Address
 
 class AddressCreate(BaseModel):
     street: str
