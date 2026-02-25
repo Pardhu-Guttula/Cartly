@@ -1,11 +1,7 @@
-To fulfill the user stories and integrate the promotion system with a payment system, the implementation will ensure that:
+Based on the given folder structure and user stories about applying promotions during checkout, the implementation will focus on:
 
-1. Promotions are applied correctly before the final amount calculation.
-2. Payment transactions reflect the discounted amounts.
-3. Rollback mechanisms are in place in case of payment integration issues.
+1. Defining models for `Promotion` and `Discount`.
+2. Creating routes for applying promotions during checkout.
+3. Validating the promotions: whether they are valid, expired, or invalid.
 
-Below is the implementation plan:
-
-1. Model for `Promotion`.
-2. Integration endpoint for the checkout process.
-3. Methods to calculate discounted amounts and handle transactions safely.
+Below is the implementation plan for applying promotions during checkout:
