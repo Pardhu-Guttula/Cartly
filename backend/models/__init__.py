@@ -1,16 +1,18 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from backend.models.user import Base as UserBase
-from backend.models.address import Base as AddressBase
+from backend.models.performance_metric import PerformanceMetric
+from backend.models.user_behavior import UserBehavior
 
-# Epic Title: Address Data Security
+# Epic Title: Develop PostgreSQL Database for Performance Metrics
 
-DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
+DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_factory = scoped_session(SessionLocal)
 
 def init_db():
-    UserBase.metadata.create_all(bind=engine)
-    AddressBase.metadata.create_all(bind=engine)
+    PerformanceMetric.metadata.create_all(bind=engine)
+    UserBehavior.metadata.create_all(bind=engine)
+
+### Services
