@@ -1,1 +1,5 @@
-# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
+# Epic Title: Develop Reusable and Mobile-Friendly UI Components Using Next.js
+
+Given the constraints that this task is strictly backend oriented with Flask and a MySQL database, creating UI components using Next.js falls outside the current backend development focus. Since we deal with folders for models, routes, schemas, and services, it is invalid to produce frontend code here.
+
+Thus, this implementation cannot proceed as the specifications do not match the backend-only structure provided. The backend setup cannot properly address frontend Next.js requirements.
