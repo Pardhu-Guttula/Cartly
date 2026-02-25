@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
+# Epic Title: Develop Reusable Product Browsing Components
 
 Base = declarative_base()
 
