@@ -1,35 +1,47 @@
 variable "resource_group_name" {
-  description = "The name of the resource group."
+  description = "Name of the resource group"
   type        = string
   default     = "cartly-rg"
 }
 
 variable "location" {
-  description = "The Azure location where resources should be created."
+  description = "Azure location"
   type        = string
-  default     = "East US"
+  default     = "West Europe"
 }
 
-variable "app_service_plan_name" {
-  description = "The name of the App Service plan."
+variable "webapp_name" {
+  description = "Name of the Azure App Service web app"
   type        = string
-  default     = "cartly-app-service-plan"
+  default     = "cartly-webapp"
 }
 
-variable "web_app_name" {
-  description = "The name of the Web App."
+variable "backend_app_name" {
+  description = "Name of the Azure App Service API app"
   type        = string
-  default     = "cartly-web-app"
+  default     = "cartly-backend-app"
 }
 
-variable "cdn_profile_name" {
-  description = "The name of the CDN profile."
+variable "appservice_plan_name" {
+  description = "Name of the Azure App Service plan"
   type        = string
-  default     = "cartly-cdn-profile"
+  default     = "cartly-appserviceplan"
 }
 
-variable "cdn_endpoint_name" {
-  description = "The name of the CDN endpoint."
+variable "frontdoor_name" {
+  description = "Name of the Azure Front Door"
   type        = string
-  default     = "cartly-cdn-endpoint"
+  default     = "cartly-frontdoor"
+}
+
+variable "function_app_name" {
+  description = "Name of the Azure Function App"
+  type        = string
+  default     = "cartly-functions"
+}
+
+variable "adb2c_name" {
+  description = "Name of the Azure Active Directory B2C instance"
+  type        = string
+  default     = "cartlyadb2c"
 }
