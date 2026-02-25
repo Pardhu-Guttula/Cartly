@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Implement product management functionality
+# Epic Title: Integrate dashboard with PostgreSQL
 
 Base = declarative_base()
 
