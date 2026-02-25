@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import cart
+from backend.routes import product_browsing
 from backend.services.database import init_db
 
-# Epic Title: Implement Shopping Cart and Wishlist Functionality
+# Epic Title: Develop Reusable Product Browsing Components
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the cart routes
-app.include_router(cart.router, prefix="/api/cart", tags=["Cart"])
+# Include the product browsing route
+app.include_router(product_browsing.router, prefix="/api/products", tags=["Product Browsing"])
