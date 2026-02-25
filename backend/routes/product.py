@@ -4,7 +4,7 @@ from backend.models import Product
 from backend.schemas import ProductCreate, ProductUpdate, ProductOut
 from backend.services.database import get_db
 
-# Epic Title: Integrate dashboard with PostgreSQL
+# Epic Title: Implement product management functionality
 
 router = APIRouter()
 
