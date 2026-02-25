@@ -1,7 +1,7 @@
--- Epic Title: Address Data Security
+-- Epic Title: Ensure Modular Architecture for Easy Integration
 
 CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50) NOT NULL UNIQUE,
-    is_authorized BOOLEAN DEFAULT FALSE
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE
 );
