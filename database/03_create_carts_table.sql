@@ -1,4 +1,4 @@
--- Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
+-- Epic Title: Implement Shopping Cart and Wishlist Functionality
 
 CREATE TABLE carts (
     id SERIAL PRIMARY KEY,
