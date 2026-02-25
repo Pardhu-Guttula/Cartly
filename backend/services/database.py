@@ -1,10 +1,10 @@
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
-from backend.models import init_db
+from backend.models import Base
 
-# Epic Title: Develop PostgreSQL Database for Performance Metrics
+# Epic Title: Develop Frontend Interface for Promotions
 
-DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
+DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -17,7 +17,7 @@ def get_db():
     finally:
         db.close()
 
-def initialize_database():
-    init_db()
-
-### Routes
+def init_db():
+    import backend.models.promotion
+    import backend.models.discount
+    Base.metadata.create_all(bind=engine)
