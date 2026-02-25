@@ -1,14 +1,14 @@
-To fulfill the requirements for creating a visualization tool with Next.js, the implementation will cover rendering interactive charts, ensuring high performance with large datasets, and handling data errors gracefully.
+Given the need to integrate the promotion system with the order management backend using Node.js, the solution will cover functionalities for:
 
-### Implementation Plan
+1. Reflecting applied promotions in order records.
+2. Handling inconsistencies between promotions and orders.
+3. Maintaining data consistency.
 
-The following implementation will follow the stated requirements and priorities:
+Let's implement the necessary code:
 
-1. **Set up a Next.js project**.
-2. **Install necessary charting libraries (`react-chartjs-2` and `chart.js`)**.
-3. **Create pages for rendering bar, line, and pie charts**.
-4. **Implement error handling for invalid datasets**.
+1. **Create models for `Promotion` and `Order`.**
+2. **Implement routes for order management, including applying promotions.**
+3. **Ensure data consistency between promotions and orders.**
 
-### Next.js Front-end Implementation
-
-Here is the complete implementation:
+### Backend Implementation
+Below is the backend implementation in Node.js:
