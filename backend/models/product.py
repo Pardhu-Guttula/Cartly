@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Design PostgreSQL Data Models for Categories
+# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
 
 Base = declarative_base()
 
@@ -17,3 +17,8 @@ class Product(Base):
     inventory = Column(Integer, nullable=False)
     
     category = relationship("Category", back_populates="products")
+
+    __table_args__ = (
+        CheckConstraint('price > 0', name='price_positive'),
+        CheckConstraint('inventory >= 0', name='inventory_non_negative'),
+    )
