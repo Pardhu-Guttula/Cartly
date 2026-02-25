@@ -1,18 +1,16 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from backend.models.performance_metric import PerformanceMetric
-from backend.models.user_behavior import UserBehavior
+from backend.models.promotion import Base as PromotionBase
+from backend.models.discount import Base as DiscountBase
 
-# Epic Title: Develop PostgreSQL Database for Performance Metrics
+# Epic Title: Develop Frontend Interface for Promotions
 
-DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
+DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_factory = scoped_session(SessionLocal)
 
 def init_db():
-    PerformanceMetric.metadata.create_all(bind=engine)
-    UserBehavior.metadata.create_all(bind=engine)
-
-### Services
+    PromotionBase.metadata.create_all(bind=engine)
+    DiscountBase.metadata.create_all(bind=engine)
