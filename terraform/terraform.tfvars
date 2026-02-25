@@ -1,0 +1,8 @@
+resource_group_name = "cartly-rg"
+location           = "West Europe"
+webapp_name        = "cartly-webapp"
+backend_app_name   = "cartly-backend-app"
+appservice_plan_name = "cartly-appserviceplan"
+frontdoor_name     = "cartly-frontdoor"
+function_app_name  = "cartly-functions"
+adb2c_name         = "cartlyadb2c"
