@@ -1,3 +1,5 @@
-# Epic Title: Ensure Cross-Browser Compatibility for UI Components
+# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
-Given the nature of the request and the folder structure that only facilitates backend development, it is not feasible to implement UI components compatibility tests within the specified folder structure and technology stack (Flask and MySQL). Thus the request cannot be accommodated due to the mismatch between the frontend requirements and backend-only structure provided. The backend setup cannot appropriately address frontend requirements for cross-browser compatibility.
+Given the requirement to switch from MySQL to PostgreSQL for the persistence of shopping cart and wishlist data, we need to modify the database connection setup accordingly. The following files will be created or modified to adapt to PostgreSQL.
+
+The backend structure provided will have the necessary models, routes, and schemas in line with the user stories.
