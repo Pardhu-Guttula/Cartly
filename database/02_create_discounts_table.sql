@@ -1,8 +1,8 @@
--- Epic Title: Store Promotion and Discount Data in PostgreSQL
+-- Epic Title: Develop Frontend Interface for Promotions
 
 CREATE TABLE discounts (
-    id SERIAL PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     discount_amount FLOAT NOT NULL,
-    promotion_id INTEGER NOT NULL,
-    FOREIGN KEY (promotion_id) REFERENCES promotions (id)
+    promotion_id INT NOT NULL,
+    FOREIGN KEY (promotion_id) REFERENCES promotions(id)
 );
