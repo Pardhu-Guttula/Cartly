@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, ForeignKey, Float
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Implement Shopping Cart and Wishlist Functionality
+# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
 Base = declarative_base()
 
