@@ -1,8 +1,8 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Design PostgreSQL Data Models for Categories
+# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
 
 Base = declarative_base()
 
@@ -15,4 +15,8 @@ class Category(Base):
     parent_id = Column(Integer, ForeignKey('categories.id'), nullable=True)
     
     products = relationship("Product", back_populates="category")
-    subcategories = relationship("Category")
+    subcategories = relationship("Category", backref='parent', remote_side=[id])
+
+    __table_args__ = (
+        CheckConstraint('char_length(name) > 0', name='name_non_empty'),
+    )
