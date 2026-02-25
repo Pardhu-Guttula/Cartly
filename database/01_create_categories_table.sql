@@ -1,4 +1,4 @@
--- Epic Title: Implement Shopping Cart and Wishlist Functionality
+-- Epic Title: Develop Reusable Product Browsing Components
 
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
