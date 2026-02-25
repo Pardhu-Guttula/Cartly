@@ -1,11 +1,10 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
-from datetime import datetime
 from backend.models.promotion import Promotion
 from backend.schemas.promotion import PromotionApply, PromotionResult
 from backend.services.database import get_db
 
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Develop Frontend Interface for Promotions
 
 router = APIRouter()
 
