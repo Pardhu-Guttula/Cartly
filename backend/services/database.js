@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 
-// Epic Title: Integrate Promotion System with Order Management
+// Epic Title: Ensure Modular Architecture for Easy Integration
 
 const sequelize = new Sequelize('mydatabase', 'username', 'password', {
   host: 'localhost',
