@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from backend.models.product import Base
+from backend.models.user import Base as UserBase
+from backend.models.address import Base as AddressBase
 
-# Epic Title: Implement product management functionality
+# Epic Title: Edit User Address
 
 DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
@@ -11,5 +12,5 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 session_factory = scoped_session(SessionLocal)
 
 def init_db():
-    import backend.models.product
-    Base.metadata.create_all(bind=engine)
+    UserBase.metadata.create_all(bind=engine)
+    AddressBase.metadata.create_all(bind=engine)
