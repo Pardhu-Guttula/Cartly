@@ -1,10 +1,10 @@
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
-from backend.models import Base
+from backend.models import TransactionBase, PaymentGatewayBase
 
-# Epic Title: Log and store transactions securely
+# Epic Title: Integrate multiple payment gateways
 
-DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
+DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -18,5 +18,5 @@ def get_db():
         db.close()
 
 def init_db():
-    import backend.models.transaction_log
-    Base.metadata.create_all(bind=engine)
+    TransactionBase.metadata.create_all(bind=engine)
+    PaymentGatewayBase.metadata.create_all(bind=engine)
