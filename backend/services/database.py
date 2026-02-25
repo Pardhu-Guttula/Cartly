@@ -2,9 +2,9 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Save User Address
+# Epic Title: Log and store transactions securely
 
-DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
+DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -18,6 +18,5 @@ def get_db():
         db.close()
 
 def init_db():
-    import backend.models.user
-    import backend.models.address
+    import backend.models.transaction_log
     Base.metadata.create_all(bind=engine)
