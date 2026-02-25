@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
-# Epic Title: Develop Reusable Product Browsing Components
+# Epic Title: Implement Efficient Product Search Functionality
 
 Base = declarative_base()
 
