@@ -1,12 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Edit User Address
-
-class AddressCreate(BaseModel):
-    street: str
-    city: str
-    state: str
-    postal_code: str
+# Epic Title: Delete User Address
 
 class AddressOut(BaseModel):
     id: int
