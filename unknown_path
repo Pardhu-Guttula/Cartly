@@ -1,14 +1,3 @@
-Given the need to integrate the promotion system with the order management backend using Node.js, the solution will cover functionalities for:
+Based on the provided user stories and requirements, the implementation focuses on backend functionality for handling promotions and an interface for the frontend using Next.js.
 
-1. Reflecting applied promotions in order records.
-2. Handling inconsistencies between promotions and orders.
-3. Maintaining data consistency.
-
-Let's implement the necessary code:
-
-1. **Create models for `Promotion` and `Order`.**
-2. **Implement routes for order management, including applying promotions.**
-3. **Ensure data consistency between promotions and orders.**
-
-### Backend Implementation
-Below is the backend implementation in Node.js:
+Here is the backend implementation for handling promotions:
