@@ -1,6 +1,6 @@
 I am unable to proceed based on the given constraints:
 
-- The user stories specify Node.js for the backend, whereas the provided tech stack indicates Flask.
+- The user stories specify Next.js for the frontend, whereas the provided tech stack indicates Flask.
 - The database specified in user stories is PostgreSQL, while the tech stack mentions MySQL.
 
 These inconsistencies prevent a clear path forward that adheres to the rules provided. As such, I must terminate the operation.
