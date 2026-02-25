@@ -1,5 +1,7 @@
-# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
+I am unable to proceed based on the given constraints:
 
-Given the requirement to switch from MySQL to PostgreSQL for the persistence of shopping cart and wishlist data, we need to modify the database connection setup accordingly. The following files will be created or modified to adapt to PostgreSQL.
+- The user stories specify Next.js for the frontend and Node.js for the backend.
+- The tech stack provided is Flask, which conflicts with the specified requirement of Node.js for the backend.
+- The database specified in user stories is PostgreSQL, while the tech stack mentions MySQL. 
 
-The backend structure provided will have the necessary models, routes, and schemas in line with the user stories.
+These inconsistencies prevent a clear path forward that adheres to the rules provided. As such, I must terminate the operation.
