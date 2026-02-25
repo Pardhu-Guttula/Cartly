@@ -2,7 +2,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Apply Promotions During Checkout
 
 DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
@@ -19,5 +19,4 @@ def get_db():
 
 def init_db():
     import backend.models.promotion
-    import backend.models.transaction
     Base.metadata.create_all(bind=engine)
