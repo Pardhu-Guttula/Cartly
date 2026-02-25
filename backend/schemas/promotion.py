@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Develop Frontend Interface for Promotions
 
 class PromotionApply(BaseModel):
     code: str
