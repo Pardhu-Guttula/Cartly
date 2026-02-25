@@ -8,20 +8,9 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "sequelize": "^6.6.5",
-    "mysql2": "^2.2.5"
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4"
   }
 }
 
-### How to Start the Application
-1. **Set up the database**:
-   - Create the database and run the SQL scripts to create the tables:
-          mysql -u username -p mydatabase < database/01_create_users_table.sql
-     mysql -u username -p mydatabase < database/02_create_products_table.sql
-     mysql -u username -p mydatabase < database/03_create_orders_table.sql
-     
-2. **Start the backend server**:
-   - Navigate to the `backend` directory.
-   - Run `npm install` to install dependencies.
-   - Start the backend server with `npm start`.
-
-This implementation ensures a modular architecture for easy integration, with separate concerns for users, products, and orders, allowing for individual modules to be developed and deployed independently while supporting seamless connectivity and communication between modules.
+### FastAPI (optional for managing environment variables)
