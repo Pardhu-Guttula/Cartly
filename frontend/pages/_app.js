@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 
-# Epic Title: Develop Frontend Interface for Promotions
+// Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
