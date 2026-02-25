@@ -1,4 +1,4 @@
--- Epic Title: Develop Reusable Product Browsing Components
+-- Epic Title: Implement Efficient Product Search Functionality
 
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY,
