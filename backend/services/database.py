@@ -1,22 +1,21 @@
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Implement secure checkout process
+# Epic Title: Integrate dashboard with PostgreSQL
 
-DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
+DATABASE_URL = 'postgresql+psycopg2://username:password@localhost/mydatabase'
 
 engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-session_factory = scoped_session(SessionLocal)
 
 def get_db():
-    db = session_factory()
+    db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
 
 def init_db():
-    import backend.models.transaction
+    import backend.models.product
     Base.metadata.create_all(bind=engine)
