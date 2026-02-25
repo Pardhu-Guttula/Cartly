@@ -1,48 +1,56 @@
 provider "azurerm" {
   features {}
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 4.56.0"
+    }
+  }
 }
 
 resource "azurerm_resource_group" "rg" {
   name     = "cartly-rg"
-  location = "East US"
+  location = "West Europe"
 }
 
-resource "azurerm_app_service_plan" "asp" {
-  name                = "cartly-app-service-plan"
+resource "azurerm_app_service" "webapp" {
+  name                = "cartly-webapp"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
+}
+
+resource "azurerm_app_service" "backend_app" {
+  name                = "cartly-backend-app"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
+}
+
+resource "azurerm_app_service_plan" "appserviceplan" {
+  name                = "cartly-appserviceplan"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   sku {
-    tier = "Standard"
-    size = "S1"
+    tier = "Basic"
+    size = "B1"
   }
 }
 
-resource "azurerm_app_service" "web_app" {
-  name                = "cartly-web-app"
+resource "azurerm_frontdoor" "frontdoor" {
+  name                = "cartly-frontdoor"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  app_service_plan_id = azurerm_app_service_plan.asp.id
-  site_config {
-    dotnet_framework_version = "v4.0"
-    scm_type                 = "LocalGit"
-  }
 }
 
-resource "azurerm_cdn_profile" "cdn" {
-  name                = "cartly-cdn-profile"
+resource "azurerm_function_app" "functionapp" {
+  name                = "cartly-functions"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  sku                 = "Standard_Microsoft"
+  app_service_plan_id = azurerm_app_service_plan.appserviceplan.id
 }
 
-resource "azurerm_cdn_endpoint" "cdn_endpoint" {
-  name                = "cartly-cdn-endpoint"
-  profile_name        = azurerm_cdn_profile.cdn.name
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  origin_host_header  = azurerm_app_service.web_app.default_host_name
-  origins {
-    name      = "cartly-origin"
-    host_name = azurerm_app_service.web_app.default_host_name
-  }
+resource "azurerm_active_directory_b2c" "adb2c" {
+  name     = "cartlyadb2c"
+  location = azurerm_resource_group.rg.location
 }
