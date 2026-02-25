@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Implement Shopping Cart and Wishlist Functionality
+# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
 class CartItem(BaseModel):
     id: int
