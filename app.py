@@ -1,10 +1,16 @@
-from backend import create_app
-from backend.models import init_db
+from fastapi import FastAPI
+from backend.routes import cart, wishlist
+from backend.services.database import init_db
 
-# Epic Title: User Signup Functionality
+# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
-app = create_app()
+app = FastAPI()
 
-if __name__ == "__main__":
+# Initialize the database
+@app.on_event("startup")
+def on_startup():
     init_db()
-    app.run(host='0.0.0.0', port=5000)
+
+# Include the cart and wishlist routes
+app.include_router(cart.router, prefix="/api/cart", tags=["Cart"])
+app.include_router(wishlist.router, prefix="/api/wishlist", tags=["Wishlist"])
