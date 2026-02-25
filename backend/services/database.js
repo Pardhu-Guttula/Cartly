@@ -1,10 +1,12 @@
 const { Sequelize } = require('sequelize');
 
-// Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
+// Epic Title: Develop Data Processing Backend with Node.js
 
 const sequelize = new Sequelize('mydatabase', 'username', 'password', {
   host: 'localhost',
-  dialect: 'postgres',
+  dialect: 'mysql',
 });
 
 module.exports = sequelize;
+
+### Database Schema
