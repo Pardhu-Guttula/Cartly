@@ -1,15 +1,12 @@
-from fastapi import FastAPI
-from backend.routes import product_search
-from backend.services.database import init_db
+from backend import create_app
+from backend.models import init_db
+from backend.routes.auth_route import auth_bp
 
-# Epic Title: Implement Efficient Product Search Functionality
+# Epic Title: User Login Functionality
 
-app = FastAPI()
+app = create_app()
+app.register_blueprint(auth_bp)
 
-# Initialize the database
-@app.on_event("startup")
-def on_startup():
+if __name__ == "__main__":
     init_db()
-
-# Include the product search route
-app.include_router(product_search.router, prefix="/api/products", tags=["Product Search"])
+    app.run(host='0.0.0.0', port=5000)
