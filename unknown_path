@@ -1,3 +1,6 @@
-Based on the provided user stories and requirements, the implementation focuses on backend functionality for handling promotions and an interface for the frontend using Next.js.
+Given the requirement to store promotion and discount data in PostgreSQL and ensure data integrity and efficient querying, the following implementation will cover the necessary functionalities:
 
-Here is the backend implementation for handling promotions:
+1. Define models for `Promotion` and `Discount`.
+2. Implement routes for adding, updating, and querying promotion and discount data.
+3. Ensure data integrity and consistency.
+4. Implement indexing for efficient querying.
