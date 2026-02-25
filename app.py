@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import address
+from backend.routes import router
 from backend.services.database import init_db
 
-# Epic Title: Address Data Security
+# Epic Title: Develop Frontend Interface for Promotions
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the address routes
-app.include_router(address.router, prefix="/api", tags=["Address"])
+# Include the routes
+app.include_router(router)
