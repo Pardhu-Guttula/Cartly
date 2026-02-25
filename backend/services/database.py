@@ -1,14 +1,17 @@
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
+# Epic Title: Implement product management functionality
 
-engine = create_engine('postgresql+psycopg2://username:password@localhost/mydatabase')
+DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
+
+engine = create_engine(DATABASE_URL, pool_size=20, max_overflow=0)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+session_factory = scoped_session(SessionLocal)
 
 def get_db():
-    db = SessionLocal()
+    db = session_factory()
     try:
         yield db
     finally:
@@ -16,9 +19,4 @@ def get_db():
 
 def init_db():
     import backend.models.product
-    import backend.models.category
-    import backend.models.cart
-    import backend.models.cart_item
-    import backend.models.wishlist
-    import backend.models.wishlist_item
     Base.metadata.create_all(bind=engine)
