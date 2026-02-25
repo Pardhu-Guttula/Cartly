@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String, Date, Float, Index
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-# Epic Title: Develop Frontend Interface for Promotions
+# Epic Title: Store Promotion and Discount Data in PostgreSQL
 
 Base = declarative_base()
 
