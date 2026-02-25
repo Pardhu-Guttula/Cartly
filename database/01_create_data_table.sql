@@ -1,10 +1,8 @@
--- Epic Title: Develop Data Processing Backend with Node.js
+-- Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
 
 CREATE TABLE data (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    value VARCHAR(255) NOT NULL,
-    processed BOOLEAN DEFAULT FALSE
+    id SERIAL PRIMARY KEY,
+    value VARCHAR(255) NOT NULL
 );
 
-### Dependencies
-Below are the dependencies required for the setup:
+### Node.js Backend Dependencies
