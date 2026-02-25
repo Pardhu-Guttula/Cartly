@@ -1,7 +1,6 @@
--- Epic Title: Ensure Modular Architecture for Easy Integration
+-- Epic Title: Save User Address
 
 CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE
 );
