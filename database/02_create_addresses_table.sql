@@ -1,4 +1,4 @@
--- Epic Title: Save User Address
+-- Epic Title: Edit User Address
 
 CREATE TABLE addresses (
     id INT AUTO_INCREMENT PRIMARY KEY,
