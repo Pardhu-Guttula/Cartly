@@ -2,7 +2,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Edit User Address
+# Epic Title: Delete User Address
 
 DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
