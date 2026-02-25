@@ -1,20 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const sequelize = require('./services/database');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-const orderRoutes = require('./routes/orderRoutes');
+const dataRoutes = require('./routes/dataRoutes');
+const Data = require('./models/dataModel');
 
-// Epic Title: Ensure Modular Architecture for Easy Integration
+// Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
 
 const app = express();
-const port = 3000;
+const port = 3001;
 
 app.use(bodyParser.json());
-
-app.use('/api', userRoutes);
-app.use('/api', productRoutes);
-app.use('/api', orderRoutes);
+app.use('/api', dataRoutes);
 
 sequelize.sync().then(() => {
   console.log('Database synced');
@@ -23,7 +19,7 @@ sequelize.sync().then(() => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Backend server is running on http://localhost:${port}`);
 });
 
-### Database Schema
+### PostgreSQL Database Schema
