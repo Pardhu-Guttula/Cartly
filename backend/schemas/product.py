@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-# Epic Title: Implement product management functionality
+# Epic Title: Integrate dashboard with PostgreSQL
 
 class ProductBase(BaseModel):
     name: str
