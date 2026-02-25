@@ -2,7 +2,7 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy import create_engine
 from backend.models import Base
 
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Save User Address
 
 DATABASE_URL = 'mysql+mysqlconnector://username:password@localhost/mydatabase'
 
@@ -18,5 +18,6 @@ def get_db():
         db.close()
 
 def init_db():
-    import backend.models.promotion
+    import backend.models.user
+    import backend.models.address
     Base.metadata.create_all(bind=engine)
