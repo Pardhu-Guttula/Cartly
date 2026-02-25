@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import product
+from backend.routes import address
 from backend.services.database import init_db
 
-# Epic Title: Implement product management functionality
+# Epic Title: Edit User Address
 
 app = FastAPI()
 
@@ -11,5 +11,5 @@ app = FastAPI()
 def on_startup():
     init_db()
 
-# Include the product routes
-app.include_router(product.router, prefix="/api/products", tags=["Products"])
+# Include the address routes
+app.include_router(address.router, prefix="/api", tags=["Address"])
