@@ -2,11 +2,12 @@ from backend.models import SessionLocal
 from backend.models.user import User
 from backend.models.session import Session
 from backend.schemas.session import SessionSchema
+from backend.services.password_service import PasswordService
 import logging
 import jwt
 from datetime import datetime, timedelta
 
-# Epic Title: User Login Functionality
+# Epic Title: User Password Security
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -28,7 +29,7 @@ class AuthService:
         session = SessionLocal()
         try:
             user = session.query(User).filter(User.email == email).first()
-            if user and user.password == password:
+            if user and PasswordService.check_password(user.password, password):
                 jwt_token = AuthService.create_jwt(user.id)
                 user_session = Session(user_id=user.id, jwt_token=jwt_token)
                 session.add(user_session)
@@ -41,6 +42,23 @@ class AuthService:
         except Exception as e:
             session.rollback()
             logger.error(f"Error during login: {e}")
+            raise
+        finally:
+            session.close()
+
+    @staticmethod
+    def create_user(email: str, password: str):
+        session = SessionLocal()
+        try:
+            hashed_password = PasswordService.hash_password(password)
+            user = User(email=email, password=hashed_password)
+            session.add(user)
+            session.commit()
+            logger.info(f"User created with email: {email}")
+            return user
+        except Exception as e:
+            session.rollback()
+            logger.error(f"Error creating user: {e}")
             raise
         finally:
             session.close()
