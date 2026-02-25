@@ -1,3 +1,1 @@
-# Epic Title: Design PostgreSQL Data Models for Products
-
-As the user stories and core domain objects revolve only around the backend model setup, necessary attributes, and referential integrity, the direct focus will be on database model creation using SQLAlchemy and its relations.
+# Epic Title: User Password Security
