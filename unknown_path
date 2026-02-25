@@ -1,5 +1,3 @@
-# Epic Title: Develop Reusable Product Browsing Components
+# Epic Title: Implement Efficient Product Search Functionality
 
-Given that the components need to support functionalities such as pagination and displaying product details, the backend will provide the necessary APIs to support these functionalities. 
-
-We will create appropriate routes and services to facilitate these backend functionalities.
+In order to implement the efficient product search functionality within the given backend structure, we will create the necessary route and service files to support searching products.
