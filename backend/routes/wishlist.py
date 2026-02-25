@@ -4,7 +4,7 @@ from backend.models import Wishlist, WishlistItem
 from backend.schemas import Wishlist as WishlistSchema, WishlistItem as WishlistItemSchema
 from backend.services.database import get_db
 
-# Epic Title: Implement Shopping Cart and Wishlist Functionality
+# Epic Title: Persist Data with PostgreSQL for Shopping Cart and Wishlist
 
 router = APIRouter()
 
