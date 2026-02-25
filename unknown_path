@@ -1,7 +1,8 @@
-Based on the given folder structure and user stories about applying promotions during checkout, the implementation will focus on:
+Based on the given folder structure and user stories about saving addresses securely for logged-in users, the implementation will focus on the following:
 
-1. Defining models for `Promotion` and `Discount`.
-2. Creating routes for applying promotions during checkout.
-3. Validating the promotions: whether they are valid, expired, or invalid.
+1. Implement models for `User` and `Address`.
+2. Create routes for saving addresses and handling different validation scenarios.
+3. Use schemas for validating address inputs.
+4. Ensure secure storage of address data using encryption.
 
-Below is the implementation plan for applying promotions during checkout:
+Below is the implementation plan for storing user addresses:
