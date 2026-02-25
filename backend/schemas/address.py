@@ -1,6 +1,12 @@
 from pydantic import BaseModel
 
-# Epic Title: Retrieve User Addresses
+# Epic Title: Address Data Security
+
+class AddressCreate(BaseModel):
+    street: str
+    city: str
+    state: str
+    postal_code: str
 
 class AddressOut(BaseModel):
     id: int
