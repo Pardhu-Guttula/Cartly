@@ -1,1 +1,1 @@
-No files can be generated because the provided user stories belong to frontend development scope which is outside the backend folder structure and tech stack provided.
+No files can be generated because the user stories mention PostgreSQL, but the provided tech stack specifies MySQL as the database. This inconsistency prevents the generation of valid output.
