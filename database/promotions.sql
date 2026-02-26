@@ -1,4 +1,4 @@
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Develop Frontend Interface for Promotions
 
 CREATE TABLE IF NOT EXISTS promotions (
     id INT AUTO_INCREMENT PRIMARY KEY,
