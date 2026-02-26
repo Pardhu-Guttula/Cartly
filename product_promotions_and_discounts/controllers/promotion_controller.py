@@ -1,9 +1,8 @@
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Develop Frontend Interface for Promotions
 
 from flask import Blueprint, request, jsonify
 from backend import db
 from product_promotions_and_discounts.models.promotion import Promotion
-from checkout_process.models.transaction import Transaction
 
 promotion_bp = Blueprint('promotion', __name__)
 
