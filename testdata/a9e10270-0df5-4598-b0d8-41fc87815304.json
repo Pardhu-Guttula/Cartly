@@ -1,0 +1,45 @@
+```json
+{
+  "get_products": [],
+  
+  "get_product_by_id_existing": {
+    "products": [
+      {
+        "id": 1,
+        "name": "Existing Product 1",
+        "price": 100
+      }
+    ]
+  },
+  
+  "get_product_by_id_non_existing": null,
+  
+  "create_product_success": {
+    "id": 1001,
+    "name": "New Test Product",
+    "price": 200
+  },
+  
+  "create_product_missing_field": {
+    "error": "Missing required field: price"
+  },
+  
+  "update_product_success": {
+    "id": 1,
+    "name": "Updated Product",
+    "price": 150
+  },
+  
+  "update_product_non_existing": {
+    "error": "Product not found"
+  },
+  
+  "delete_product_success": {
+    "message": "Product deleted successfully"
+  },
+  
+  "delete_product_non_existing": {
+    "error": "Product not found"
+  }
+}
+```
