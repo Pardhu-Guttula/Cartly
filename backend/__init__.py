@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL Data Models for Categories
+# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
