@@ -1,4 +1,4 @@
-# Epic Title: User Login Functionality
+# Epic Title: User Password Security
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
