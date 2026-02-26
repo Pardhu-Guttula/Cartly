@@ -1,34 +1,25 @@
-# Epic Title: Implement secure checkout process
+# Epic Title: Apply Promotions During Checkout
 
 from flask import Blueprint, request, jsonify
 from backend import db
-from checkout_process.models.transaction import Transaction
+from product_promotions_and_discounts.models.promotion import Promotion
 
 checkout_bp = Blueprint('checkout', __name__)
 
-@checkout_bp.route('/checkout', methods=['POST'])
-def process_checkout():
+@checkout_bp.route('/apply_promotion', methods=['POST'])
+def apply_promotion():
     data = request.get_json()
-    user_id = data.get('user_id')
-    product_id = data.get('product_id')
-    amount = data.get('amount')
-    payment_details = data.get('payment_details')
+    promotion_code = data.get('promotion_code')
 
-    if not payment_details:
-        return jsonify({"error": "Payment details are required"}), 400
+    promotion = Promotion.query.filter_by(code=promotion_code).first()
 
-    if not validate_payment_details(payment_details):
-        return jsonify({"error": "Invalid payment details"}), 400
+    if not promotion:
+        return jsonify({"error": "Invalid promotion code"}), 400
 
-    transaction = Transaction(user_id=user_id, product_id=product_id, amount=amount, status='success')
-    try:
-        db.session.add(transaction)
-        db.session.commit()
-        return jsonify({"message": "Transaction processed successfully"}), 201
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({"error": str(e)}), 500
+    if not promotion.is_valid():
+        return jsonify({"error": "Promotion code is expired or inactive"}), 400
 
-def validate_payment_details(payment_details: dict) -> bool:
-    # Implement payment details validation logic here
-    return True
+    return jsonify({
+        "message": "Promotion applied successfully",
+        "discount_amount": promotion.discount_amount
+    }), 200
