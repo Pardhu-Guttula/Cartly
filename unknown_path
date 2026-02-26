@@ -1,1 +1,1 @@
-No files can be generated because the user stories specify the use of PostgreSQL for logging and storing transaction details, whereas the declared tech stack specifies MySQL. This inconsistency prevents the generation of valid output.
+Establishing a scalable infrastructure using Next.js, Node.js, and PostgreSQL involves setting up a Next.js project for the frontend, a Node.js server for the backend, and integrating PostgreSQL for data storage. Below is the complete structure based on the given folder structure and user stories.
