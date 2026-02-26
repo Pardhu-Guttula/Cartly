@@ -1,4 +1,4 @@
-# Epic Title: User Password Security
+# Epic Title: User Login Functionality
 
 from backend import db
 from sqlalchemy import Column, Integer, String
@@ -13,4 +13,5 @@ class User(db.Model):
 
     def __init__(self, email: str, password: str):
         self.email = email
+        # Securely store the password hash instead of plain text
         self.password = generate_password_hash(password)
