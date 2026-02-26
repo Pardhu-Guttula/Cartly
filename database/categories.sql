@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL Data Models for Categories
+# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
 
 CREATE TABLE IF NOT EXISTS categories (
     id SERIAL PRIMARY KEY,
