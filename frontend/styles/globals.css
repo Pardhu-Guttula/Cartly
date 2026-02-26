@@ -1,17 +1,12 @@
-# Epic Title: Develop Frontend Interface for Promotions
+# Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
 
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-}
-
-input {
-  margin-right: 10px;
 }
