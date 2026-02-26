@@ -1,6 +1,7 @@
-# Epic Title: User Signup Functionality
+# Epic Title: User Password Security
 
 from flask import Blueprint, request, jsonify
+from werkzeug.security import generate_password_hash
 from backend.models.user import User
 from backend.models.credentials import Credentials
 from backend import db
@@ -21,7 +22,8 @@ def signup():
     if len(password) < 8:
         return jsonify({"error": "Password does not meet the requirements"}), 400
 
-    credentials = Credentials(password=password)
+    hashed_password = generate_password_hash(password)
+    credentials = Credentials(password=hashed_password)
     user = User(email=email, credentials=credentials)
     
     db.session.add(credentials)
