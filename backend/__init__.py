@@ -1,4 +1,4 @@
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Apply Promotions During Checkout
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -13,10 +13,7 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from product_promotions_and_discounts.controllers.promotion_controller import promotion_bp
-        from checkout_process.controllers.payment_controller import payment_bp
-
-        app.register_blueprint(promotion_bp, url_prefix='/api')
-        app.register_blueprint(payment_bp, url_prefix='/api')
+        from checkout_process.controllers.checkout_controller import checkout_bp
+        app.register_blueprint(checkout_bp, url_prefix='/api')
 
     return app
