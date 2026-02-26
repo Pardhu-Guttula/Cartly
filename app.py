@@ -1,4 +1,4 @@
-# Epic Title: User Password Security
+# Epic Title: User Login Functionality
 
 from backend import create_app
 
