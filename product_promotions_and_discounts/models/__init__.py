@@ -1,4 +1,4 @@
-# Epic Title: Store Promotion and Discount Data in PostgreSQL
+# Epic Title: Integrate Promotion System with Payment System
 
 from product_promotions_and_discounts.models.promotion import Promotion
 
