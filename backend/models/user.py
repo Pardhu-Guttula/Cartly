@@ -1,4 +1,4 @@
-# Epic Title: User Signup Functionality
+# Epic Title: User Password Security
 
 from backend import db
 from backend.models.credentials import Credentials
@@ -13,6 +13,7 @@ class User(db.Model):
     credentials_id = Column(Integer, db.ForeignKey('credentials.id'), nullable=False)
 
     credentials = relationship("Credentials", back_populates="user")
+    sessions = relationship("Session", back_populates="user")
 
     def __init__(self, email: str, credentials: Credentials):
         self.email = email
