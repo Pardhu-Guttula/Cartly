@@ -1,4 +1,4 @@
-# Epic Title: User Login Functionality
+# Epic Title: User Password Security
 
 CREATE TABLE IF NOT EXISTS sessions (
     id INT AUTO_INCREMENT PRIMARY KEY,
