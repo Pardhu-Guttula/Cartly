@@ -1,4 +1,4 @@
-# Epic Title: Integrate multiple payment gateways
+# Epic Title: Implement secure checkout process
 
 from backend import create_app
 
