@@ -1,4 +1,4 @@
-# Epic Title: User Login Functionality
+# Epic Title: User Password Security
 
 from flask import Blueprint, request, jsonify
 from werkzeug.security import check_password_hash
