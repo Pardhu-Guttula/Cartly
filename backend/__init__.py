@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL data models for categories
+# Epic Title: Design PostgreSQL data models for products
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
