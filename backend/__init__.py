@@ -1,4 +1,4 @@
-# Epic Title: Edit User Address
+# Epic Title: Save User Address
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -13,7 +13,7 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from user_accounts.controllers.address_controller import address_bp
-        app.register_blueprint(address_bp, url_prefix='/api')
+        from user_accounts.controllers.user_controller import user_bp
+        app.register_blueprint(user_bp, url_prefix='/api')
 
     return app
