@@ -1,0 +1,17 @@
+# Epic Title: Develop Frontend Interface for Promotions
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+input {
+  margin-right: 10px;
+}
