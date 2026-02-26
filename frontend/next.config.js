@@ -1,4 +1,4 @@
-# Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
+# Epic Title: Develop Visualization Front-end with Next.js
 
 module.exports = {
     reactStrictMode: true,
@@ -6,7 +6,7 @@ module.exports = {
         return [
             {
                 source: '/api/:path*',
-                destination: 'http://localhost:4000/api/:path*',
+                destination: 'http://localhost:5000/api/:path*',
             },
         ];
     },
