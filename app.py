@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL data models for products
+# Epic Title: User Password Security
 
 from backend import create_app
 
