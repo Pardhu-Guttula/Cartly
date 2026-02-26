@@ -1,4 +1,4 @@
-# Epic Title: Develop Frontend Interface for Promotions
+# Epic Title: Store Promotion and Discount Data in PostgreSQL
 
 from backend import create_app
 
