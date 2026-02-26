@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL data models for categories
+# Epic Title: Design PostgreSQL data models for products
 
 from backend import create_app
 
