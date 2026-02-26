@@ -1,0 +1,23 @@
+{
+  "productsToolbar.sortOption.featured": "Featured",
+  "productsToolbar.sortOption.newest": "Newest",
+  "productsToolbar.sortOption.priceAsc": "Price: Low to High",
+  "productsToolbar.sortOption.priceDesc": "Price: High to Low",
+  "resultsText.of": "of",
+  "resultsText.productsSuffix": "products",
+  "resultsText.showingPrefix": "Showing",
+  "resultsTextResultsSection.of": "of",
+  "resultsTextResultsSection.productsSuffix": "products",
+  "resultsTextResultsSection.showingPrefix": "Showing",
+  "sortSelect.label": "Sort:",
+  "sortSelectToolbarRightControls.label": "Sort:",
+  "toolbarRightControls.sortLabel": "Sort:",
+  "toolbarRightControls.sortOption.default": "Default",
+  "toolbarRightControls.sortOption.newest": "Newest",
+  "toolbarRightControls.sortOption.priceAsc": "Price: Low to High",
+  "toolbarRightControls.sortOption.priceDesc": "Price: High to Low",
+  "viewToggle.gridView": "Grid view",
+  "viewToggle.listView": "List view",
+  "viewToggleToolbarRightControls.gridView": "Grid view",
+  "viewToggleToolbarRightControls.listView": "List view"
+}
