@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL Data Models for Products
+# Epic Title: Design PostgreSQL Data Models for Categories
 
 from backend import db
 from sqlalchemy.orm import relationship
