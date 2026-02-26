@@ -1,4 +1,4 @@
-# Epic Title: Implement secure checkout process
+# Epic Title: Implement product management functionality
 
 from backend import create_app
 
