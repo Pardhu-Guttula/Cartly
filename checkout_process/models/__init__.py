@@ -1,4 +1,4 @@
-# Epic Title: Implement secure checkout process
+# Epic Title: Integrate multiple payment gateways
 
 from checkout_process.models.transaction import Transaction
 
