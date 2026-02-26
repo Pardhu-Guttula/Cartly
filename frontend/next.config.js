@@ -1,0 +1,13 @@
+# Epic Title: Develop Frontend Interface for Promotions
+
+module.exports = {
+    reactStrictMode: true,
+    async rewrites() {
+        return [
+            {
+                source: '/api/:path*',
+                destination: 'http://localhost:5000/api/:path*',
+            },
+        ];
+    },
+};
