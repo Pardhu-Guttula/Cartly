@@ -1,3 +1,1 @@
-I apologize, but the user stories require the use of PostgreSQL, while the specified tech stack for the implementation is Flask and MySQL. This discrepancy makes it incompatible to proceed with the current requirements and tech stack.
-
-Thank you.
+No files can be generated because the provided user stories belong to a frontend development scope involving Next.js, which is outside the backend folder structure and tech stack defined in the user prompt.
