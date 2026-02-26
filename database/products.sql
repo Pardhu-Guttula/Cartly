@@ -1,9 +1,11 @@
-# Epic Title: Implement product management functionality
+# Epic Title: Design PostgreSQL data models for categories
 
 CREATE TABLE IF NOT EXISTS products (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    description TEXT,
+    description VARCHAR(1024) NOT NULL,
     price FLOAT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    category_id INTEGER NOT NULL,
+    inventory INTEGER NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES categories (id)
 );
