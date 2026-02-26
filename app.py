@@ -1,4 +1,4 @@
-# Epic Title: Implement shopping cart and wishlist functionality
+# Epic Title: Design PostgreSQL data models for categories
 
 from backend import create_app
 
