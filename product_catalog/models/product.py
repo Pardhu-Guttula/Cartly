@@ -1,7 +1,7 @@
-# Epic Title: Design PostgreSQL data models for products
+# Epic Title: Ensure data integrity and referential integrity in product-category models
 
 from backend import db
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, CheckConstraint
 from sqlalchemy.orm import relationship
 
 class Product(db.Model):
@@ -10,9 +10,9 @@ class Product(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(255), nullable=False)
     description = Column(String(1024), nullable=False)
-    price = Column(Float, nullable=False)
-    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
-    inventory = Column(Integer, nullable=False)
+    price = Column(Float, nullable=False, CheckConstraint('price >= 0.0'))
+    category_id = Column(Integer, ForeignKey('categories.id', ondelete='CASCADE'), nullable=False)
+    inventory = Column(Integer, nullable=False, CheckConstraint('inventory >= 0'))
 
     category = relationship("Category", back_populates="products")
 
