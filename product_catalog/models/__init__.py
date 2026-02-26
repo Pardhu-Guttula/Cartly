@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL data models for products
+# Epic Title: Ensure data integrity and referential integrity in product-category models
 
 from backend import db
 from product_catalog.models.product import Product
