@@ -1,4 +1,4 @@
-# Epic Title: User Signup Functionality
+# Epic Title: User Password Security
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -13,6 +13,8 @@ def create_app():
     db.init_app(app)
 
     from backend.routes.signup import signup_bp
+    from backend.routes.login import login_bp
     app.register_blueprint(signup_bp)
+    app.register_blueprint(login_bp)
 
     return app
