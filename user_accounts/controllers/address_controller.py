@@ -1,25 +1,26 @@
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 from flask import Blueprint, request, jsonify
-from sqlalchemy.exc import IntegrityError
 from backend import db
 from user_accounts.models.address import Address
 
 address_bp = Blueprint('address', __name__)
 
-@address_bp.route('/address/<int:address_id>', methods=['DELETE'])
-def delete_address(address_id: int):
-    data = request.get_json()
-    user_id = data.get('user_id')
+@address_bp.route('/address', methods=['GET'])
+def get_addresses():
+    user_id = request.args.get('user_id')
 
-    address = Address.query.filter_by(id=address_id, user_id=user_id).first()
-    if not address:
-        return jsonify({"error": "Address not found"}), 404
+    addresses = Address.query.filter_by(user_id=user_id).all()
+    if not addresses:
+        return jsonify({"message": "No saved addresses found"}), 200
 
-    try:
-        db.session.delete(address)
-        db.session.commit()
-        return jsonify({"message": "Address deleted successfully"}), 200
-    except IntegrityError:
-        db.session.rollback()
-        return jsonify({"error": "Failed to delete address"}), 500
+    address_list = [{
+        "id": address.id,
+        "street": address.street,
+        "city": address.city,
+        "state": address.state,
+        "postal_code": address.postal_code,
+        "country": address.country
+    } for address in addresses]
+
+    return jsonify(address_list), 200
