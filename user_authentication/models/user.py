@@ -1,7 +1,8 @@
-# Epic Title: User Signup Functionality
+# Epic Title: User Password Security
 
 from backend import db
 from sqlalchemy import Column, Integer, String
+from werkzeug.security import generate_password_hash
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -12,4 +13,4 @@ class User(db.Model):
 
     def __init__(self, email: str, password: str):
         self.email = email
-        self.password = password
+        self.password = generate_password_hash(password)
