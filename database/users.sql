@@ -1,7 +1,8 @@
-# Epic Title: User Signup Functionality
+# Epic Title: Save User Address
 
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(120) UNIQUE NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(120) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL
 );
