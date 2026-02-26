@@ -1,4 +1,4 @@
-# Epic Title: User Signup Functionality
+# Epic Title: User Password Security
 
 from backend import db
 from sqlalchemy.orm import relationship
