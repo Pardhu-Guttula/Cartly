@@ -1,4 +1,4 @@
-# Epic Title: User Login Functionality
+# Epic Title: User Signup Functionality
 
 from backend import create_app
 
