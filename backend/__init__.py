@@ -1,4 +1,4 @@
-# Epic Title: Save User Address
+# Epic Title: Integrate multiple payment gateways
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -13,7 +13,7 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from user_accounts.controllers.user_controller import user_bp
-        app.register_blueprint(user_bp, url_prefix='/api')
+        from checkout_process.controllers.checkout_controller import checkout_bp
+        app.register_blueprint(checkout_bp, url_prefix='/api')
 
     return app
