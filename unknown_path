@@ -1,1 +1,1 @@
-No files can be generated because the user stories specify the use of Next.js for the frontend, whereas the declared tech stack only includes Flask and MySQL for the backend. This inconsistency prevents the generation of valid output.
+No files can be generated because the user stories specify the use of PostgreSQL for logging and storing transaction details, whereas the declared tech stack specifies MySQL. This inconsistency prevents the generation of valid output.
