@@ -1,4 +1,4 @@
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
