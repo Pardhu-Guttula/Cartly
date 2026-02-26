@@ -1,11 +1,11 @@
-# Epic Title: Develop Data Processing Backend with Node.js
+# Epic Title: Establish Scalable Infrastructure using Next.js, Node.js, and PostgreSQL
 
 {
-  "name": "data-processor",
+  "name": "marketplace-backend",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
