@@ -1,4 +1,4 @@
-# Epic Title: Integrate multiple payment gateways
+# Epic Title: Implement secure checkout process
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
