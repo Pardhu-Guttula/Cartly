@@ -1,4 +1,4 @@
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
