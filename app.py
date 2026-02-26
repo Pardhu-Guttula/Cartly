@@ -1,4 +1,4 @@
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 from backend import create_app
 
