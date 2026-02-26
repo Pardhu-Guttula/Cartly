@@ -1,9 +1,6 @@
-# Epic Title: Implement Shopping Cart and Wishlist Functionality
+# Epic Title: Integrate Multiple Payment Gateways
 
 from backend import db
-from backend.models.product import Product
-from backend.models.category import Category
-from backend.models.cart import Cart
-from backend.models.cart_item import CartItem
+from backend.models.transaction import Transaction
 
-__all__ = ["Product", "Category", "Cart", "CartItem"]
+__all__ = ["Transaction"]
