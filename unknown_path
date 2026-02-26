@@ -1,1 +1,1 @@
-No files can be generated because the user stories mention PostgreSQL, but the provided tech stack specifies MySQL as the database. This inconsistency prevents the generation of valid output.
+No files can be generated because the provided user stories mention the use of Next.js for the frontend, Node.js for the backend, and PostgreSQL for data storage, which conflict with the provided tech stack (Flask and MySQL).
