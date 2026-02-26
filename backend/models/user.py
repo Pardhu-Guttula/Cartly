@@ -12,8 +12,11 @@ class User(Base):
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     email = Column(String(50), unique=True, nullable=False)
     password = Column(String(255), nullable=False)
+    primary_mobile_number = Column(String(20), nullable=False)
+    secondary_mobile_number = Column(String(20), nullable=True)
 
     sessions = relationship("Session", back_populates="user")
+
 class Session(Base):
     __tablename__ = 'sessions'
     
