@@ -1,4 +1,4 @@
-# Epic Title: Delete User Address
+# Epic Title: Retrieve User Addresses
 
 CREATE TABLE IF NOT EXISTS addresses (
     id INT AUTO_INCREMENT PRIMARY KEY,
