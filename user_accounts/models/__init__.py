@@ -1,4 +1,4 @@
-# Epic Title: Save User Address
+# Epic Title: Delete User Address
 
 from user_accounts.models.user import User
 from user_accounts.models.address import Address
