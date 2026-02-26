@@ -1,1 +1,1 @@
-No files can be generated because the user stories specify PostgreSQL for data storage, but the declared tech stack specifies MySQL. This inconsistency prevents generation of valid output.
+No files can be generated because the user stories specify the use of Node.js and PostgreSQL for the backend, whereas the declared tech stack specifies Flask and MySQL. This inconsistency prevents the generation of valid output.
