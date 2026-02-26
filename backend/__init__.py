@@ -1,4 +1,4 @@
-# Epic Title: User Password Security
+# Epic Title: User Login Functionality
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -12,7 +12,7 @@ def create_app():
 
     db.init_app(app)
 
-    from user_authentication.controllers.security_controller import security_bp
-    app.register_blueprint(security_bp, url_prefix='/api')
+    from user_authentication.controllers.login_controller import login_bp
+    app.register_blueprint(login_bp, url_prefix='/api')
 
     return app
