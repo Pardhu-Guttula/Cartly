@@ -1,9 +1,21 @@
 {
-  "productsToolbar.sortLabel": "Sort:",
-  "resultsText.of": "of",
-  "resultsText.productsSuffix": "products",
-  "resultsText.showingPrefix": "Showing",
-  "sortControl.sortLabel": "Sort:",
-  "viewToggle.gridView": "Grid view",
-  "viewToggle.listView": "List view"
+  "common.addToCart": "Add to Cart",
+  "productCard.wishlist.add": "Add to wishlist",
+  "productCard.wishlist.remove": "Remove from wishlist",
+  "products.category.electronics": "electronics",
+  "products.category.jewelery": "jewelery",
+  "products.category.mensClothing": "men's clothing",
+  "products.sectionLabel": "Products",
+  "products.title.p1": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+  "products.title.p10": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+  "products.title.p11": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+  "products.title.p12": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+  "products.title.p2": "Mens Casual Premium Slim Fit T-Shirts",
+  "products.title.p3": "Mens Cotton Jacket",
+  "products.title.p4": "Mens Casual Slim Fit",
+  "products.title.p5": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+  "products.title.p6": "Solid Gold Petite Micropave",
+  "products.title.p7": "White Gold Plated Princess",
+  "products.title.p8": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+  "products.title.p9": "WD 2TB Elements Portable External Hard Drive - USB 3.0"
 }
