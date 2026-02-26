@@ -1,21 +1,15 @@
-# Epic Title: Implement secure checkout process
+# Epic Title: Integrate Promotion System with Payment System
 
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, DECIMAL
 from backend import db
-from sqlalchemy import Column, Integer, String, Float, DateTime
 
 class Transaction(db.Model):
     __tablename__ = 'transactions'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, nullable=False)
-    product_id = Column(Integer, nullable=False)
-    amount = Column(Float, nullable=False)
-    status = Column(String(50), nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    amount = Column(DECIMAL(10, 2), nullable=False)
+    promotion_code = Column(String(50), nullable=True)
 
-    def __init__(self, user_id: int, product_id: int, amount: float, status: str):
-        self.user_id = user_id
-        self.product_id = product_id
+    def __init__(self, amount: float, promotion_code: str = None):
         self.amount = amount
-        self.status = status
+        self.promotion_code = promotion_code
