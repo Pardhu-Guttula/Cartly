@@ -1,4 +1,4 @@
-# Epic Title: Integrate Promotion System with Order Management
+# Epic Title: Develop Frontend Interface for Promotions
 
 from backend import create_app
 
