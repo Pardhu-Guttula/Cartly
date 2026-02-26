@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL Data Models for Categories
+# Epic Title: Ensure Data Integrity and Referential Integrity in Product-Category Models
 
 from backend import db
 from sqlalchemy.orm import relationship
@@ -11,7 +11,7 @@ class Product(db.Model):
     name = Column(String(255), nullable=False)
     description = Column(String(1000), nullable=True)
     price = Column(Numeric(10, 2), nullable=False)
-    category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
+    category_id = Column(Integer, ForeignKey('categories.id', ondelete='CASCADE'), nullable=False)
     inventory = Column(Integer, nullable=False)
 
     category = relationship("Category", back_populates="products")
