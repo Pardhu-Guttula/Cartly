@@ -1,4 +1,4 @@
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Edit User Address
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -13,7 +13,7 @@ def create_app():
     db.init_app(app)
 
     with app.app_context():
-        from checkout_process.controllers.checkout_controller import checkout_bp
-        app.register_blueprint(checkout_bp, url_prefix='/api')
+        from user_accounts.controllers.address_controller import address_bp
+        app.register_blueprint(address_bp, url_prefix='/api')
 
     return app
