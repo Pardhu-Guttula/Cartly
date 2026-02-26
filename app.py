@@ -1,4 +1,4 @@
-# Epic Title: Develop PostgreSQL Database for Performance Metrics
+# Epic Title: Develop Visualization Front-end with Next.js
 
 from backend import create_app
 
