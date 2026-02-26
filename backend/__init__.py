@@ -1,4 +1,4 @@
-# Epic Title: Integrate Promotion System with Order Management
+# Epic Title: Develop Frontend Interface for Promotions
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -7,13 +7,13 @@ db = SQLAlchemy()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:password@localhost/ordersdb'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://user:password@localhost/checkoutdb'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
 
     with app.app_context():
-        from order_management.controllers.order_controller import order_bp
-        app.register_blueprint(order_bp, url_prefix='/api')
+        from product_promotions_and_discounts.controllers.promotion_controller import promotion_bp
+        app.register_blueprint(promotion_bp, url_prefix='/api')
 
     return app
