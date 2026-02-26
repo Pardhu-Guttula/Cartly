@@ -1,4 +1,4 @@
-# Epic Title: Ensure Modular Architecture for Easy Integration
+# Epic Title: User Authentication
 
 from flask import jsonify
 from . import admin_dashboard_bp
