@@ -1,4 +1,4 @@
-# Epic Title: Address Data Security
+# Epic Title: Edit User Address
 
 CREATE TABLE IF NOT EXISTS addresses (
     id INT AUTO_INCREMENT PRIMARY KEY,
