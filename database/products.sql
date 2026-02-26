@@ -1,4 +1,4 @@
-# Epic Title: Design PostgreSQL Data Models for Products
+# Epic Title: Design PostgreSQL Data Models for Categories
 
 CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
