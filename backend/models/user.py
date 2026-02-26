@@ -14,3 +14,11 @@ class User(Base):
     password = Column(String(255), nullable=False)
 
     sessions = relationship("Session", back_populates="user")
+class Session(Base):
+    __tablename__ = 'sessions'
+    
+    id = Column(Integer, Sequence('session_id_seq'), primary_key=True)
+    user_id = Column(Integer, nullable=False)
+    token = Column(String(500), nullable=False)
+
+    user = relationship("User", back_populates="sessions")
