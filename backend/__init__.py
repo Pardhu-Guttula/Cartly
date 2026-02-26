@@ -14,8 +14,6 @@ def create_app():
 
     with app.app_context():
         from shopping_cart_and_wishlist.controllers.shopping_cart_controller import shopping_cart_bp
-        from shopping_cart_and_wishlist.controllers.wishlist_controller import wishlist_bp
         app.register_blueprint(shopping_cart_bp, url_prefix='/api')
-        app.register_blueprint(wishlist_bp, url_prefix='/api')
 
     return app
