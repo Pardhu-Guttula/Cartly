@@ -1,4 +1,4 @@
-# Epic Title: Retrieve User Addresses
+# Epic Title: Address Data Security
 
 from user_accounts.models.user import User
 from user_accounts.models.address import Address
