@@ -1,4 +1,4 @@
-# Epic Title: Develop Visualization Front-end with Next.js
+# Epic Title: Integrate Promotion System with Order Management
 
 from backend import create_app
 
