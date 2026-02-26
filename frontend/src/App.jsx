@@ -1,6 +1,6 @@
 import React from "react";
-import ProductsPage from "./components/ProductsPage";
+import ProductsGridPage from "./components/ProductsGridPage";
 
 export default function App() {
-  return <ProductsPage />;
+  return <ProductsGridPage />;
 }

@@ -1,6 +1,5 @@
-import React, { useMemo, useState } from "react";
-import { useIntl } from "react-intl";
-import ProductCard from "./ProductCard";
+import React, { useMemo } from "react";
+import ProductCardSection2 from "./ProductCardSection2";
 
 const imgFjallravenFoldsackNo1BackpackFits15Laptops =
   "https://www.figma.com/api/mcp/asset/25db0ce6-0337-42f9-a7fb-4455b23533ad";
@@ -27,127 +26,113 @@ const imgSiliconPower256GbSsd3DNandA55SlcCachePerformanceBoostSataIii25 =
 const imgWd4TbGamingDriveWorksWithPlaystation4PortableExternalHardDrive =
   "https://www.figma.com/api/mcp/asset/42a57b52-1ff6-4ca3-82de-2e823a333a35";
 
-export default function ProductsGridContainer({ onProductClick = () => {}, onAddToCart = () => {} }) {
-  const intl = useIntl();
-
+export default function ProductsContainer({ onAddToCart = () => {}, onProductClick = () => {} }) {
   const products = useMemo(
     () => [
       {
-        id: "fjallraven-foldsack",
+        id: "p1",
         imageUrl: imgFjallravenFoldsackNo1BackpackFits15Laptops,
         category: "men's clothing",
         title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        href: "http://localhost:8200/pdp.html",
         rating: 3.5,
         ratingCount: 120,
         price: "$109.95",
       },
       {
-        id: "mens-premium-slim-fit",
+        id: "p2",
         imageUrl: imgMensCasualPremiumSlimFitTShirts,
         category: "men's clothing",
         title: "Mens Casual Premium Slim Fit T-Shirts",
-        href: "http://localhost:8200/pdp.html",
         rating: 4,
         ratingCount: 259,
         price: "$22.30",
       },
       {
-        id: "mens-cotton-jacket",
+        id: "p3",
         imageUrl: imgMensCottonJacket,
         category: "men's clothing",
         title: "Mens Cotton Jacket",
-        href: "http://localhost:8200/pdp.html",
         rating: 4.5,
         ratingCount: 500,
         price: "$55.99",
       },
       {
-        id: "mens-casual-slim-fit",
+        id: "p4",
         imageUrl: imgMensCasualSlimFit,
         category: "men's clothing",
         title: "Mens Casual Slim Fit",
-        href: "http://localhost:8200/pdp.html",
         rating: 2,
         ratingCount: 430,
         price: "$15.99",
       },
       {
-        id: "john-hardy-naga",
+        id: "p5",
         imageUrl: imgJohnHardyWomensLegendsNagaGoldSilverDragonStationChainBracelet,
         category: "jewelery",
         title: "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-        href: "http://localhost:8200/pdp.html",
         rating: 4.5,
         ratingCount: 400,
         price: "$695.00",
       },
       {
-        id: "solid-gold-micropave",
+        id: "p6",
         imageUrl: imgSolidGoldPetiteMicropave,
         category: "jewelery",
         title: "Solid Gold Petite Micropave",
-        href: "http://localhost:8200/pdp.html",
         rating: 3.5,
         ratingCount: 70,
         price: "$168.00",
       },
       {
-        id: "white-gold-princess",
+        id: "p7",
         imageUrl: imgWhiteGoldPlatedPrincess,
         category: "jewelery",
         title: "White Gold Plated Princess",
-        href: "http://localhost:8200/pdp.html",
         rating: 3,
         ratingCount: 400,
         price: "$9.99",
       },
       {
-        id: "pierced-owl-rose-gold",
+        id: "p8",
         imageUrl: imgPiercedOwlRoseGoldPlatedStainlessSteelDouble,
         category: "jewelery",
         title: "Pierced Owl Rose Gold Plated Stainless Steel Double",
-        href: "http://localhost:8200/pdp.html",
         rating: 1.5,
         ratingCount: 100,
         price: "$10.99",
       },
       {
-        id: "wd-elements-2tb",
+        id: "p9",
         imageUrl: imgWd2TbElementsPortableExternalHardDriveUsb30,
         category: "electronics",
         title: "WD 2TB Elements Portable External Hard Drive - USB 3.0",
-        href: "http://localhost:8200/pdp.html",
         rating: 3,
         ratingCount: 203,
         price: "$64.00",
       },
       {
-        id: "sandisk-ssd-plus-1tb",
+        id: "p10",
         imageUrl: imgSanDiskSsdPlus1TbInternalSsdSataIii6GbS,
         category: "electronics",
         title: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-        href: "http://localhost:8200/pdp.html",
         rating: 2.5,
         ratingCount: 470,
         price: "$109.00",
       },
       {
-        id: "silicon-power-a55",
+        id: "p11",
         imageUrl: imgSiliconPower256GbSsd3DNandA55SlcCachePerformanceBoostSataIii25,
         category: "electronics",
         title: "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-        href: "http://localhost:8200/pdp.html",
         rating: 4.5,
         ratingCount: 319,
         price: "$109.00",
       },
       {
-        id: "wd-gaming-drive-4tb",
+        id: "p12",
         imageUrl: imgWd4TbGamingDriveWorksWithPlaystation4PortableExternalHardDrive,
         category: "electronics",
         title: "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-        href: "http://localhost:8200/pdp.html",
         rating: 4.5,
         ratingCount: 400,
         price: "$114.00",
@@ -156,61 +141,28 @@ export default function ProductsGridContainer({ onProductClick = () => {}, onAdd
     []
   );
 
-  const [columns, setColumns] = useState(3);
-
   return (
-    <section aria-label="Products" style={{ width: 1040 }}>
-      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 24 }}>
-        <label
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-            fontSize: 13,
-            color: "#64748B",
-          }}
-        >
-          {intl.formatMessage({ id: "productsGridContainer.columnsLabel" })}
-          <select
-            value={columns}
-            onChange={(e) => setColumns(Number(e.target.value))}
-            style={{
-              height: 36,
-              borderRadius: 10,
-              border: "1px solid #E2E8F0",
-              background: "#FFFFFF",
-              paddingLeft: 10,
-              paddingRight: 10,
-              color: "#1E293B",
-              fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-              fontSize: 13,
-              outline: "none",
-            }}
-          >
-            <option value={1}>{intl.formatMessage({ id: "common.one" })}</option>
-            <option value={2}>{intl.formatMessage({ id: "common.two" })}</option>
-            <option value={3}>{intl.formatMessage({ id: "common.three" })}</option>
-          </select>
-        </label>
-      </div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-          gap: 24,
-        }}
-      >
-        {products.map((p) => (
-          <ProductCard
-            key={p.id}
-            {...p}
-            onProductClick={onProductClick}
-            onAddToCart={onAddToCart}
-          />
-        ))}
-      </div>
-    </section>
+    <div
+      style={{
+        width: 1040,
+        display: "grid",
+        gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+        gap: 24,
+      }}
+    >
+      {products.map((p) => (
+        <ProductCardSection2
+          key={p.id}
+          imageUrl={p.imageUrl}
+          category={p.category}
+          title={p.title}
+          rating={p.rating}
+          ratingCount={p.ratingCount}
+          price={p.price}
+          onAddToCart={() => onAddToCart(p.id)}
+          onProductClick={() => onProductClick(p.id)}
+        />
+      ))}
+    </div>
   );
 }

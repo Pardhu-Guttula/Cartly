@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import RatingStars from "./RatingStars";
 import AddToCartButton from "./AddToCartButton";
 
-export default function ProductCard({
-  id,
+export default function ProductCardSection2({
   imageUrl,
   category,
   title,
-  href,
   rating,
   ratingCount,
   price,
-  onProductClick = () => {},
   onAddToCart = () => {},
+  onProductClick = () => {},
 }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         background: "#FFFFFF",
         borderRadius: 16,
@@ -28,26 +30,26 @@ export default function ProductCard({
     >
       <div
         style={{
-          background: "#F8FAFC",
           height: 280,
-          padding: 24,
+          background: "#F8FAFC",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          padding: 24,
         }}
       >
         <img
           src={imageUrl}
           alt={title}
           style={{
-            maxWidth: 264.53,
             maxHeight: 224,
+            maxWidth: 264.53,
             width: "auto",
             height: "auto",
             objectFit: "contain",
-            display: "block",
+            filter: isHovered ? "saturate(1.02)" : "none",
+            transition: "filter 150ms ease",
           }}
-          loading="lazy"
         />
       </div>
 
@@ -59,86 +61,80 @@ export default function ProductCard({
           paddingBottom: 20,
           display: "flex",
           flexDirection: "column",
+          gap: 1.4,
+          flex: 1,
         }}
       >
         <div
           style={{
-            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
             fontSize: 12,
             fontWeight: 600,
             letterSpacing: 0.5,
             textTransform: "uppercase",
             color: "#4361EE",
             lineHeight: "19.2px",
-            marginBottom: 1.4,
           }}
         >
           {category}
         </div>
 
-        <a
-          href={href}
-          onClick={(e) => {
-            e.preventDefault();
-            onProductClick(id);
-          }}
+        <button
+          type="button"
+          onClick={onProductClick}
           style={{
+            border: 0,
+            background: "transparent",
+            padding: 0,
+            textAlign: "left",
+            cursor: "pointer",
             color: "#1E293B",
-            textDecoration: "none",
-            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
             fontSize: 15,
             fontWeight: 600,
             lineHeight: "21px",
+            minHeight: 42,
             display: "-webkit-box",
             WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
             overflow: "hidden",
-            minHeight: 42,
-            marginBottom: 8.6,
-            cursor: "pointer",
           }}
+          title={title}
         >
           {title}
-        </a>
+        </button>
 
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 8,
-            marginBottom: 10.59,
-          }}
-        >
+        <div style={{ display: "flex", alignItems: "center", gap: 8, paddingTop: 8.6 }}>
           <RatingStars value={rating} />
           <div
             style={{
-              fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+              fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
               fontSize: 13,
               fontWeight: 400,
-              lineHeight: "20.8px",
               color: "#64748B",
-              whiteSpace: "nowrap",
+              lineHeight: "20.8px",
             }}
           >
             ({ratingCount})
           </div>
         </div>
 
-        <div
-          style={{
-            fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
-            fontSize: 20,
-            fontWeight: 700,
-            lineHeight: "32px",
-            color: "#4361EE",
-            marginBottom: 14.6,
-          }}
-        >
-          {price}
+        <div style={{ paddingTop: 10.59, paddingBottom: 14.6 }}>
+          <div
+            style={{
+              fontFamily: "Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif",
+              fontSize: 20,
+              fontWeight: 700,
+              color: "#4361EE",
+              lineHeight: "32px",
+            }}
+          >
+            {price}
+          </div>
         </div>
 
         <div style={{ marginTop: "auto" }}>
-          <AddToCartButton onClick={() => onAddToCart(id)} />
+          <AddToCartButton onClick={onAddToCart} />
         </div>
       </div>
     </div>

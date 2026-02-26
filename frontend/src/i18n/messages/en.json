@@ -1,11 +1,7 @@
 {
-  "common.addToCart": "Add to Cart",
-  "productCard.addToWishlist": "Add to wishlist",
-  "productCard.removeFromWishlist": "Remove from wishlist",
-  "productCardFixed.addToWishlist": "Add to wishlist",
-  "productCardFixed.removeFromWishlist": "Remove from wishlist",
-  "productCardsSection.ariaLabelProducts": "Products",
-  "productsGridContainer.ariaLabelProducts": "Products",
-  "ratingStarsDisplay.ariaLabel": "Rating {value} out of 5",
-  "ratingStarsInteractive.rateStar": "Rate {count} star"
+  "addToCartButton.label": "Add to Cart",
+  "common.one": "1",
+  "common.three": "3",
+  "common.two": "2",
+  "productsGridContainer.columnsLabel": "Columns"
 }
