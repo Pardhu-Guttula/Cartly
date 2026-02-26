@@ -1,4 +1,4 @@
-# Epic Title: Integrate Promotion System with Payment System
+# Epic Title: Apply Promotions During Checkout
 
 from backend import create_app
 
