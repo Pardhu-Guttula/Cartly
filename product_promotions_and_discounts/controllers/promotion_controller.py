@@ -1,31 +1,51 @@
-# Epic Title: Develop Frontend Interface for Promotions
+# Epic Title: Store Promotion and Discount Data in PostgreSQL
 
 from flask import Blueprint, request, jsonify
-from backend import db
-from product_promotions_and_discounts.models.promotion import Promotion
+from product_promotions_and_discounts.services.promotion_service import PromotionService
+from datetime import datetime
 
 promotion_bp = Blueprint('promotion', __name__)
 
-@promotion_bp.route('/apply_promotion', methods=['POST'])
-def apply_promotion():
+@promotion_bp.route('/promotion', methods=['POST'])
+def add_promotion():
     data = request.get_json()
-    promotion_code = data.get('promotion_code')
-    order_total = data.get('order_total')
+    code = data.get('code')
+    discount_amount = data.get('discount_amount')
+    expiry_date = datetime.strptime(data.get('expiry_date'), '%Y-%m-%dT%H:%M:%S')
+    
+    PromotionService.create_promotion(code, discount_amount, expiry_date)
+    return jsonify({"message": "Promotion added successfully"}), 201
 
-    promotion = Promotion.query.filter_by(code=promotion_code).first()
+@promotion_bp.route('/promotion/<string:code>', methods=['PUT'])
+def update_promotion(code):
+    data = request.get_json()
+    discount_amount = data.get('discount_amount')
+    expiry_date = datetime.strptime(data.get('expiry_date'), '%Y-%m-%dT%H:%M:%S')
+    active = data.get('active')
+    
+    PromotionService.update_promotion(code, discount_amount, expiry_date, active)
+    return jsonify({"message": "Promotion updated successfully"}), 200
 
+@promotion_bp.route('/promotion/<string:code>', methods=['GET'])
+def get_promotion(code):
+    promotion = PromotionService.get_promotion(code)
     if not promotion:
-        return jsonify({"error": "Invalid promotion code"}), 400
-
-    if not promotion.is_valid():
-        return jsonify({"error": "Promotion code is expired or inactive"}), 400
-
-    discounted_amount = order_total - promotion.discount_amount
-    if discounted_amount < 0:
-        discounted_amount = 0
-
+        return jsonify({"error": "Promotion not found"}), 404
+    
     return jsonify({
-        "message": "Promotion applied successfully",
-        "discounted_amount": discounted_amount,
-        "promotion_code": promotion_code
+        "code": promotion.code,
+        "discount_amount": promotion.discount_amount,
+        "expiry_date": promotion.expiry_date,
+        "active": promotion.active
     }), 200
+
+@promotion_bp.route('/promotions', methods=['GET'])
+def list_promotions():
+    promotions = PromotionService.list_promotions()
+    
+    return jsonify([{
+        "code": promotion.code,
+        "discount_amount": promotion.discount_amount,
+        "expiry_date": promotion.expiry_date,
+        "active": promotion.active
+    } for promotion in promotions]), 200
