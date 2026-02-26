@@ -1,4 +1,4 @@
-# Epic Title: Apply Promotions During Checkout
+# Epic Title: Store Promotion and Discount Data in PostgreSQL
 
 from sqlalchemy import Column, Integer, String, DateTime, Boolean
 from datetime import datetime
