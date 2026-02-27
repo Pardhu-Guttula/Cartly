@@ -1,0 +1,73 @@
+```json
+{
+    "test_health_check": [
+        {
+            "response_status_code": 200,
+            "response_json": {
+                "status": "Product Catalog API is healthy"
+            }
+        },
+        {
+            "response_status_code": 200,
+            "response_json": {
+                "status": "Healthy API"
+            }
+        },
+        {
+            "response_status_code": 200,
+            "response_json": {
+                "status": "OK"
+            }
+        },
+        {
+            "response_status_code": 200,
+            "response_json": {
+                "status": "API Status: Healthy"
+            }
+        },
+        {
+            "response_status_code": 200,
+            "response_json": {
+                "status": "Service is running smoothly"
+            }
+        }
+    ],
+    "test_health_check_jsonify_exception": [
+        {
+            "mock_jsonify_side_effect": {
+                "type": "Exception",
+                "message": "jsonify error"
+            },
+            "response_status_code": 500
+        },
+        {
+            "mock_jsonify_side_effect": {
+                "type": "Exception",
+                "message": "json exception occured"
+            },
+            "response_status_code": 500
+        },
+        {
+            "mock_jsonify_side_effect": {
+                "type": "Exception",
+                "message": "jsonify process failed"
+            },
+            "response_status_code": 500
+        },
+        {
+            "mock_jsonify_side_effect": {
+                "type": "Exception",
+                "message": "error in jsonify"
+            },
+            "response_status_code": 500
+        },
+        {
+            "mock_jsonify_side_effect": {
+                "type": "Exception",
+                "message": "unexpected jsonify exception"
+            },
+            "response_status_code": 500
+        }
+    ]
+}
+```
