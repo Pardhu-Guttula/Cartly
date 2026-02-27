@@ -1,0 +1,92 @@
+```json
+{
+  "test_health_check": [
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "response_status_code": 200,
+      "response_json": {
+        "status": "Product Catalog API is healthy"
+      }
+    },
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "response_status_code": 200,
+      "response_json": {
+        "status": "Product Catalog API is operational."
+      }
+    },
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "response_status_code": 200,
+      "response_json": {
+        "status": "Service is up!"
+      }
+    }
+  ],
+  "test_health_check_jsonify_exception": [
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "mock_jsonify_exception_message": "jsonify error",
+      "response_status_code": 500
+    },
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "mock_jsonify_exception_message": "Internal Server Error",
+      "response_status_code": 500
+    },
+    {
+      "request_method": "GET",
+      "endpoint": "/health",
+      "mock_jsonify_exception_message": "Server error occurred",
+      "response_status_code": 500
+    }
+  ],
+  "user_authentication": [
+    {
+      "username": "test_user1",
+      "password": "password123",
+      "request_method": "POST",
+      "endpoint": "/login",
+      "response_status_code": 200,
+      "response_json": {
+        "token": "fake_jwt_token_123"
+      }
+    },
+    {
+      "username": "test_user2",
+      "password": "securePassword!",
+      "request_method": "POST",
+      "endpoint": "/login",
+      "response_status_code": 401,
+      "response_json": {
+        "error": "Invalid credentials"
+      }
+    },
+    {
+      "username": "",
+      "password": "",
+      "request_method": "POST",
+      "endpoint": "/login",
+      "response_status_code": 400,
+      "response_json": {
+        "error": "Username and password required"
+      }
+    },
+    {
+      "username": "admin",
+      "password": "adminPass",
+      "request_method": "POST",
+      "endpoint": "/login",
+      "response_status_code": 403,
+      "response_json": {
+        "error": "Account locked"
+      }
+    }
+  ]
+}
+```
